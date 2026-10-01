@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "build": "wrangler deploy --dry-run --outdir=dist"
+    "build": "wrangler deploy --dry-run --outdir=dist",
     "typecheck": "tsc --noEmit",
+    "db:init": "wrangler d1 execute public-db --remote --file=./schema.sql",
     "setup": "node scripts/setup.mjs",
-    "scan:secrets": "node scripts/formal_secret_scan.mjs",
-    "db:init": "wrangler d1 execute public-db --remote --file=./schema.sql"
+    "scan:secrets": "node scripts/formal_secret_scan.mjs"
   },
   "dependencies": {
     "hono": "^4.6.14"
